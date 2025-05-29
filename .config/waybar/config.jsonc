@@ -1,0 +1,119 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["niri/workspaces","wlr/taskbar"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "network",
+    "cpu",
+    "temperature",
+    "memory",
+    "battery",
+    "pulseaudio",
+    "backlight",
+    "custom/power"
+  ],
+  "niri/workspaces": {
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name} {icon}",
+    "disable-tooltip": true,
+    "disable-markup": true,
+    "format": " {} ",
+    "format-icons": {
+      "active": "󰪥",
+      "default": "󰄰",
+    }
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "tooltip-format": "{title} | {app_id}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "on-click-right": "fullscreen"
+  },
+
+  "clock": {
+    "format": "{:%e %B %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+  },
+
+  "battery": {
+    "interval": 1,
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      // "critical": 15
+    },
+    "format": "{icon}   {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "   {essid} {ipaddr}/{cidr}",
+    "format-ethernet": "  {ipaddr}/{cidr}",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "",
+    "format-disconnected": "⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "pulseaudio": {
+	"format": "{volume}% {icon}",
+	"format-bluetooth": "{volume}% {icon}",
+	"format-muted": "",
+	"format-icons": {
+                "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+		"alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+		"headphones": "",
+		"handsfree": "",
+		"headset": "",
+		"phone": "",
+		"phone-muted": "",
+		"portable": "",
+		"car": "",
+		"default": ["", ""]
+	},
+	"scroll-step": 1,
+	"on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "format": " {percent}%"
+  },
+
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+    "device": "intel_backlight"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": "Power Menu",
+    "on-click": "wlogout"
+  },
+
+  "cpu": {
+	"interval": 1,
+	"format": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
+	"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+  },
+
+  "temperature": {
+    "interval": 1,
+    "format": " {temperatureC}°C",
+    "critical-threshold": 80
+  },
+
+  "memory": {
+    "format": "  {percentage}%"
+  }
+}

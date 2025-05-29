@@ -1,0 +1,105 @@
+* {
+  border: none;
+  border-radius: 10px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 13px;
+  padding: 4px 4px;
+  background: transparent;
+  color: #3e2f2f;
+}
+
+window#waybar {
+    background: transparent;
+    color: #ffffff;
+}
+
+#workspaces button {
+  margin-right: 4px;
+  background: none;
+  border: none;
+  background-color: transparent; /* Make hover background fully transparent */
+  padding: 2px;
+  color: #f0f0f0;
+}
+#workspaces button:hover {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  color: #8ec07c;
+  border-color: #8ec07c;
+}
+
+button {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: inherit;
+/*  box-shadow: inset 0 -2px #ffffff;*/
+}
+
+#taskbar {
+  padding: 2px 0;
+  margin-left: 4px;
+  border-radius: 99px;
+  background: rgba(0, 0, 0, 0.6);
+/*      linear-gradient(rgba(40, 40, 40, 1), rgba(40, 40, 40, 1)) padding-box,*/
+/*      linear-gradient(90deg, #8ec07c, #d5c4a1) border-box;*/
+  background-clip: padding-box, border-box;
+  border: 3px solid transparent;
+}
+#taskbar button {
+  color: #f0f0ff;
+  background-color: rgba(0, 0, 0, 0);
+  background-clip: padding-box, border-box;
+  border-radius: 99px;
+}
+#taskbar button:first-child {
+  border-radius: 99px;
+  background-clip: padding-box, border-box;
+}
+#taskbar button:last-child {
+  border-radius: 99px;
+  background-clip: padding-box, border-box;
+}
+#taskbar button.active {
+  background-color: rgba(55, 55, 55, 1);
+}
+
+#window,
+#clock,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#custom-power {
+  margin-top: 2px;
+  padding: 0 15px;
+  color: #f0f0f0;
+  border-radius: 99px;
+  background:
+  rgba(0,0,0,0.6); 
+/*    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)) padding-box,*/
+/*    linear-gradient(90deg, #8ec07c, #d5c4a1) border-box;*/
+  background-clip: padding-box, border-box;
+  border: 3px solid transparent;
+}
+
+#battery.warning {
+  color: #b85c38;
+}
+
+#pulseaudio.muted {
+  color: #999;
+}
+
+/* 温度が高すぎるとき警告色に */
+#temperature.critical {
+  color: #b85c38;
+}
