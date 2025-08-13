@@ -237,8 +237,7 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id=r#"burpsuite$"# title="^Comfirm$"
+    match app-id=r#"firefox$"# title="^ピクチャーインピクチャー$"
     
     open-floating true
 }
