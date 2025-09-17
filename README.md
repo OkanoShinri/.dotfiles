@@ -1,6 +1,6 @@
 # dotfile
 
 ```
-sudo ./link.sh
+sudo -E ./link.sh
 ```
 

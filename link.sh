@@ -4,9 +4,10 @@
 # 既存ファイルは ~/.dotfiles_backup/ に退避
 # Wayland 環境では systemd ユニットをリロード＆追加
 
-DOTFILES="$HOME/.dotfiles"
-BACKUP="$HOME/.dotfiles_backup"
-TARGET="$HOME/.config"
+SALTHOME="/home/salt"
+DOTFILES="$SALTHOME/.dotfiles"
+BACKUP="$SALTHOME/.dotfiles_backup"
+TARGET="$SALTHOME/.config"
 
 mkdir -p "$BACKUP"
 
@@ -22,8 +23,7 @@ declare -A CONFIG_LINKS=(
   [waybar]="$DOTFILES/.config/waybar"
   [wlogout]="$DOTFILES/.config/wlogout"
   [yazi]="$DOTFILES/.config/yazi"
-  # systemd は専用ディレクトリへ
-  [systemd]="$DOTFILES/systemd"
+  [systemd/user/swaybg.service]="$DOTFILES/.config/systemd/user/swaybg.service"
 )
 
 # ホーム直下
@@ -41,11 +41,17 @@ backup_and_link () {
   local dest="$1"
   local src="$2"
 
-  if [ -e "$dest" ] || [ -L "$dest" ]; then
-    local base
-    base=$(basename "$dest")
-    echo "→ $dest をバックアップします"
-    mv "$dest" "$BACKUP/${base}_$(date +%Y%m%d%H%M%S)"
+  #if [ -e "$dest" ] || [ -L "$dest" ]; then
+  #  local base
+  #  base=$(basename "$dest")
+  #  echo "→ $dest をバックアップします"
+  #  mv "$dest" "$BACKUP/${base}_$(date +%Y%m%d%H%M%S)"
+  #fi
+
+  # 既存のリンクやディレクトリを削除してから作り直す
+  if [ -L "$dest" ] || [ -e "$dest" ]; then
+    echo "→ $dest を削除します"
+    rm -rf "$dest"
   fi
 
   echo "→ $dest → $src を作成します"
@@ -59,7 +65,7 @@ done
 
 # ホーム直下の処理
 for name in "${!HOME_LINKS[@]}"; do
-  backup_and_link "$HOME/$name" "${HOME_LINKS[$name]}"
+  backup_and_link "$SALTHOME/$name" "${HOME_LINKS[$name]}"
 done
 
 # /etc 配下の処理（root 権限が必要）
