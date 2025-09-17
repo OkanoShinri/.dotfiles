@@ -30,7 +30,6 @@ sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagema
   fc-cache -fv
   ```
 
-
 - [typora](https://typora.io/#linux)
 
 - [keyd](https://github.com/rvaiya/keyd?tab=readme-ov-file#sample-config)
@@ -48,7 +47,7 @@ sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagema
 
   
 
-- 
+- [helix](https://github.com/helix-editor/helix/releases)
 
 - [starship](https://starship.rs/guide/)
 

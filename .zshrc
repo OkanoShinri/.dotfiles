@@ -5,6 +5,9 @@ HISTFILE=~/.zsh_history
 setopt inc_append_history
 setopt share_history
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/.cargo/bin"
+
 eval "$(sheldon source)"
 eval "$(starship init zsh)" 
 
@@ -35,5 +38,4 @@ alias pyven='python -m venv venv && source venv/bin/activate && pip install -U p
 alias sudo='sudo '
 alias untar='tar xzvf'
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+
