@@ -1,0 +1,6 @@
+# dotfile
+
+```
+sudo ./link.sh
+```
+

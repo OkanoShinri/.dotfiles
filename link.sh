@@ -1,0 +1,80 @@
+#!/bin/bash
+# ~/.dotfiles の内容にリンクを張り替えるスクリプト
+# /etc/dotfiles → ~/.dotfiles に変更
+# 既存ファイルは ~/.dotfiles_backup/ に退避
+# Wayland 環境では systemd ユニットをリロード＆追加
+
+DOTFILES="$HOME/.dotfiles"
+BACKUP="$HOME/.dotfiles_backup"
+TARGET="$HOME/.config"
+
+mkdir -p "$BACKUP"
+
+# .config 以下
+declare -A CONFIG_LINKS=(
+  [foot]="$DOTFILES/.config/foot"
+  [helix]="$DOTFILES/.config/helix"
+  [kak]="$DOTFILES/.config/kak"
+  [niri]="$DOTFILES/.config/niri"
+  [sheldon]="$DOTFILES/.config/sheldon"
+  [starship.toml]="$DOTFILES/.config/starship.toml"
+  [swaylock]="$DOTFILES/.config/swaylock"
+  [waybar]="$DOTFILES/.config/waybar"
+  [wlogout]="$DOTFILES/.config/wlogout"
+  [yazi]="$DOTFILES/.config/yazi"
+  # systemd は専用ディレクトリへ
+  [systemd]="$DOTFILES/systemd"
+)
+
+# ホーム直下
+declare -A HOME_LINKS=(
+  [.zshrc]="$DOTFILES/.zshrc"
+  [.zprofile]="$DOTFILES/.zprofile"
+)
+
+# /etc 配下
+declare -A ETC_LINKS=(
+  [/etc/keyd/default.conf]="$DOTFILES/etc/keyd/default.conf"
+)
+
+backup_and_link () {
+  local dest="$1"
+  local src="$2"
+
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+    local base
+    base=$(basename "$dest")
+    echo "→ $dest をバックアップします"
+    mv "$dest" "$BACKUP/${base}_$(date +%Y%m%d%H%M%S)"
+  fi
+
+  echo "→ $dest → $src を作成します"
+  ln -s "$src" "$dest"
+}
+
+# .config の処理
+for name in "${!CONFIG_LINKS[@]}"; do
+  backup_and_link "$TARGET/$name" "${CONFIG_LINKS[$name]}"
+done
+
+# ホーム直下の処理
+for name in "${!HOME_LINKS[@]}"; do
+  backup_and_link "$HOME/$name" "${HOME_LINKS[$name]}"
+done
+
+# /etc 配下の処理（root 権限が必要）
+for dest in "${!ETC_LINKS[@]}"; do
+  backup_and_link "$dest" "${ETC_LINKS[$dest]}"
+done
+
+# Wayland 環境なら systemd ユニットを更新
+if [ -n "$WAYLAND_DISPLAY" ]; then
+  echo "Wayland 環境を検出: systemd ユニットを更新します"
+  systemctl --user daemon-reload
+  systemctl --user add-wants niri.service mako.service
+  systemctl --user add-wants niri.service waybar.service
+  systemctl --user add-wants niri.service swaybg.service
+fi
+
+echo "完了しました！ バックアップは $BACKUP に保存されています。"
+
