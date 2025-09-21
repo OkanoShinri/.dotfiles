@@ -1,6 +1,6 @@
 # zsh
 sudo apt update
-sudo apt install -y zsh lsd software-properties-common parrot-desktop-i3 t rofi fonts-noto-cjk fonts-noto-color-emoji
+sudo apt install -y zsh lsd software-properties-common parrot-desktop-i3 rofi fonts-noto-cjk fonts-noto-color-emoji
 
 ZSH_PATH=$(which zsh)
 chsh -s "$ZSH_PATH"
