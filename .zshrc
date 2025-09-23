@@ -32,10 +32,12 @@ alias reconnect-mm2020='nmcli connection delete mm2020 && nmcli device wifi conn
 alias htb='sudo /usr/sbin/openvpn ~/workspace/htb/lab_5h1nr1.ovpn'
 alias nc='ncat'
 alias gc='git clone '
-alias hl='hx '
 alias -g @c='| wl-copy'
 alias pyven='python -m venv venv && source venv/bin/activate && pip install -U pip && pip install requests && echo -e "\n\e[1;32m=============================\e\n\e[1;32m  Virtual environment ready! \e[0m\n\e[1;32m=============================\e[0m\n"'
 alias sudo='sudo '
 alias untar='tar xzvf'
-
-
+if command -v hx >/dev/null 2>&1; then
+    alias hl='hx'
+elif command -v helix >/dev/null 2>&1; then
+    alias hl='helix'
+fi
