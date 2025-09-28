@@ -265,7 +265,8 @@ window-rule {
     match app-id="firefox"
     match app-id="thunderbird"
     match app-id="teams-for-linux"
-
+    match app-id="vesktop"
+    
     open-maximized true
 }
 

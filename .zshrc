@@ -34,8 +34,10 @@ alias nc='ncat'
 alias gc='git clone '
 alias -g @c='| wl-copy'
 alias pyven='python -m venv venv && source venv/bin/activate && pip install -U pip && pip install requests && echo -e "\n\e[1;32m=============================\e\n\e[1;32m  Virtual environment ready! \e[0m\n\e[1;32m=============================\e[0m\n"'
+alias server='python -m http.server 8888'
 alias sudo='sudo '
 alias untar='tar xzvf'
+alias pdf='zathura'
 if command -v hx >/dev/null 2>&1; then
     alias hl='hx'
 elif command -v helix >/dev/null 2>&1; then
