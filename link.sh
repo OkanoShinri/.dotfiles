@@ -35,6 +35,7 @@ declare -A HOME_LINKS=(
 # /etc 配下
 declare -A ETC_LINKS=(
   [/etc/keyd/default.conf]="$DOTFILES/etc/keyd/default.conf"
+  [/etc/greetd/config.toml]="$DOTFILES/etc/greetd/config.toml"
 )
 
 backup_and_link () {
@@ -72,15 +73,6 @@ done
 for dest in "${!ETC_LINKS[@]}"; do
   backup_and_link "$dest" "${ETC_LINKS[$dest]}"
 done
-
-# Wayland 環境なら systemd ユニットを更新
-if [ -n "$WAYLAND_DISPLAY" ]; then
-  echo "Wayland 環境を検出: systemd ユニットを更新します"
-  systemctl --user daemon-reload
-  systemctl --user add-wants niri.service mako.service
-  systemctl --user add-wants niri.service waybar.service
-  systemctl --user add-wants niri.service swaybg.service
-fi
 
 echo "完了しました！ バックアップは $BACKUP に保存されています。"
 
