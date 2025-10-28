@@ -7,8 +7,10 @@ export EDITOR=helix
 export PATH="$PATH:$HOME/.cargo/bin"
 
 # japanese input
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
+# It is recommended to unset GTK_IM_MODULE and QT_IM_MODULE
+# and use Wayland input method frontend instead. 
+# export GTK_IM_MODULE=fcitx
+# export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 # electron
