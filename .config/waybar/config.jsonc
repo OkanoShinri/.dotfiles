@@ -9,21 +9,30 @@
     "temperature",
     "memory",
     "battery",
-    "pulseaudio",
+    // "pulseaudio",
     "backlight",
     "custom/power"
   ],
+  // "niri/workspaces": {
+  //   "all-outputs": true,
+  //   "warp-on-scroll": false,
+  //   "format": "{name} {icon}",
+  //   "disable-tooltip": true,
+  //   "disable-markup": true,
+  //   "format": " {} ",
+  //   "format-icons": {
+  //     "active": "󰪥",
+  //     "default": "󰄰",
+  //   }
+  // },
   "niri/workspaces": {
-    "all-outputs": true,
-    "warp-on-scroll": false,
-    "format": "{name} {icon}",
-    "disable-tooltip": true,
-    "disable-markup": true,
-    "format": " {} ",
-    "format-icons": {
-      "active": "󰪥",
-      "default": "󰄰",
-    }
+	  "format": "{icon}",
+	  "format-icons": {
+
+		  // Icons by state
+		  "active": "󰪥",
+		  "default": "󰄰"
+	  }
   },
   "wlr/taskbar": {
     "format": "{icon}",
@@ -46,7 +55,7 @@
       // "critical": 15
     },
     "format": "{icon}   {capacity}%",
-    "format-charging": "  {capacity}%",
+    "format-charging": "  {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
@@ -57,7 +66,7 @@
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "   {essid} {ipaddr}/{cidr}",
-    "format-ethernet": "  {ipaddr}/{cidr}",
+    "format-ethernet": "󰈀  {ipaddr}/{cidr}",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "",
     "format-disconnected": "⚠",
@@ -109,11 +118,11 @@
 
   "temperature": {
     "interval": 1,
-    "format": " {temperatureC}°C",
+    "format": "󰏈 {temperatureC}°C",
     "critical-threshold": 80
   },
 
   "memory": {
-    "format": "  {percentage}%"
+    "format": "  {percentage}%"
   }
 }
