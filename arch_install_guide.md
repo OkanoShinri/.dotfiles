@@ -233,3 +233,13 @@ greetd+tuigreeter
 
 ## 完了！
 お疲れ様！
+
+他にいつも使っているもの：
+
+- IDE: `geany`
+- PDF: `zathura`
+- Discord: `vesktop`
+- ftp: `vsftpd`
+- paint: `pinta`
+
+あとは大体Firefoxで事足りる
