@@ -23,6 +23,7 @@ declare -A CONFIG_LINKS=(
   [waybar]="$DOTFILES/.config/waybar"
   [wlogout]="$DOTFILES/.config/wlogout"
   [yazi]="$DOTFILES/.config/yazi"
+  [mako]="$DOTFILES/.config/mako"
   [systemd/user/swaybg.service]="$DOTFILES/.config/systemd/user/swaybg.service"
 )
 
