@@ -173,7 +173,7 @@
 ## wayland環境構築
 
 ぶちこめー
-- `paru -S niri foot swaybg swaylock wlogout fuzzel firefox`
+- `paru -S niri foot swaybg swaylock-effects wlogout fuzzel firefox`
   - `xdg-desktop-portal`は`xdg-desktop-portal-wlr`を選択
   - `jack`を聞かれたら`pipewire-jack`を選択
 - これで一旦niriは起動するはず
@@ -241,5 +241,10 @@ greetd+tuigreeter
 - Discord: `vesktop`
 - ftp: `vsftpd`
 - paint: `pinta`
-
+- cursor: (everforest-cursor-light)[https://github.com/talwat/everforest-cursors]
+  - `wget -cO- https://github.com/talwat/everforest-cursors/releases/latest/download/everforest-cursors-variants.tar.bz2 | tar xfj - -C ~/.local/share/icons`
+- Network Tools:
+  - `paru -S wget mtr traceroute nmap whois`
+- FireWall: `nftables`
+  - systemdで有効化
 あとは大体Firefoxで事足りる
