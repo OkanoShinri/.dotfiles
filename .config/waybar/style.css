@@ -69,7 +69,7 @@ window#waybar {
   margin-right:10px;
 }
 #battery.warning {
-  color: #b85c38;
+  color: #E67E80;
 }
 
 #pulseaudio.muted {
@@ -78,5 +78,5 @@ window#waybar {
 
 /* 温度が高すぎるとき警告色に */
 #temperature.critical {
-  color: #b85c38;
+  color: #E67E80;
 }

@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock --clock --indicator",
+    "action" : "swaylock --config /home/salt/.config/swaylock/config --screenshots --clock --indicator -e",
     "text" : "Lock",
     "keybind" : "l"
 }
