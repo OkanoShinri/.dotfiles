@@ -37,6 +37,7 @@ declare -A HOME_LINKS=(
 declare -A ETC_LINKS=(
   [/etc/keyd/default.conf]="$DOTFILES/etc/keyd/default.conf"
   [/etc/greetd/config.toml]="$DOTFILES/etc/greetd/config.toml"
+  [/etc/wcircle/config.ini]="$DOTFILES/etc/wcircle/config.ini"
 )
 
 backup_and_link () {
