@@ -38,6 +38,9 @@ alias server='python -m http.server 8888'
 alias sudo='sudo '
 alias untar='tar xzvf'
 alias pdf='zathura'
+alias hl.='hl .'
+alias wl='nmcli device wifi list'
+
 if command -v hx >/dev/null 2>&1; then
     alias hl='hx'
 elif command -v helix >/dev/null 2>&1; then
