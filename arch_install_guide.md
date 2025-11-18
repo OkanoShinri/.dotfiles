@@ -184,7 +184,7 @@
 ## いつもの
 
 - AURで入るやつ一括
-  - `paru -S getnf noto-fonts-cjk noto-fonts-emoji starship yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick openssh lsd mako waybar swayidle fcitx5-im fcitx5-mozc greetd greetd-tuigreet`
+  - `paru -S getnf noto-fonts-cjk noto-fonts-emoji starship yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick openssh lsd mako libnotify waybar swayidle fcitx5-im fcitx5-mozc greetd greetd-tuigreet`
   - この段階まで来たら、このguideにブラウザからアクセスできているはず
 
 - keyd
