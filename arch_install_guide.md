@@ -81,7 +81,7 @@
   を追記
 
 - パッケージインストール
-  - `pacstrap -K /mnt base linux linux-firmware networkmanager helix vim zsh sudo`
+  - `pacstrap -K /mnt base linux linux-firmware networkmanager helix vim zsh`
 
 ## システム設定
 
@@ -99,6 +99,8 @@
   - `hwclock --systohc`
 
 - ローカリゼーション
+  - `helix /etc/vconsole.conf`（新規作成）
+    - 必要ならば`KEYMAP=jp106`
   - `helix /etc/locale.gen`
     - `en_US.UTF-8 UTF-8`と`ja_JP.UTF-8 UTF-8`をアンコメント
   - `locale-gen`
@@ -125,6 +127,7 @@
   - 大事
 
 - user passwd
+  - `pacman -S sudo`
   - 一応`/etc/shells`にzshがいるか確認
   - `useradd -m -G wheel -s /bin/zsh <USERNAME>`
   - `passwd <USERNAME>`
@@ -181,7 +184,7 @@
 ## いつもの
 
 - AURで入るやつ一括
-  - `paru -S getnf fonts-noto-cjk fonts-noto-color-emoji starship yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick openssh lsd waybar swayidle　fcitx5-im fcitx5-mozc greetd greetd-tuigreet`
+  - `paru -S getnf noto-fonts-cjk noto-fonts-emoji starship yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick openssh lsd mako waybar swayidle fcitx5-im fcitx5-mozc greetd greetd-tuigreet`
   - この段階まで来たら、このguideにブラウザからアクセスできているはず
 
 - keyd
