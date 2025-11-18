@@ -213,6 +213,9 @@
   - `systemctl --user daemon-reload`
   - `systemctl --user add-wants niri.service swaybg.service`
 
+- greetd
+  - `systemctl enable greetd`
+
 - dotfiles
   - まずgit cloneのためにsshを入れる
     - `ssh-keygen -t ed25519 -C "n.salt2000@gmail.com"`
@@ -227,13 +230,6 @@
 - `fcitx5-configtool`でToggle Input Methodにinsertを追加、Temporarily Toggle Input MethodのLeft Shiftを削除
   - これやらないとスペースバー押すたびに日英切り替わる
 
-## ディスプレイマネージャ
-
-greetd+tuigreeter
-
-- `systemctl enable greetd`
-- dotfilesで設定は入っているはず(/etc/greetd/config.toml)
-
 ## 完了！
 お疲れ様！
 
@@ -244,10 +240,11 @@ greetd+tuigreeter
 - Discord: `vesktop`
 - ftp: `vsftpd`
 - paint: `pinta`
-- cursor: (everforest-cursor-light)[https://github.com/talwat/everforest-cursors]
-  - `wget -cO- https://github.com/talwat/everforest-cursors/releases/latest/download/everforest-cursors-variants.tar.bz2 | tar xfj - -C ~/.local/share/icons`
 - Network Tools:
   - `paru -S wget mtr traceroute nmap whois`
+- cursor: (everforest-cursor-light)[https://github.com/talwat/everforest-cursors]
+  - `mkdir .local/share/icons && wget -cO- https://github.com/talwat/everforest-cursors/releases/latest/download/everforest-cursors-variants.tar.bz2 && tar xfj - -C ~/.local/share/icons`
+
 - FireWall: `nftables`
   - systemdで有効化
 あとは大体Firefoxで事足りる
