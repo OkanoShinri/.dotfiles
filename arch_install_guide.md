@@ -237,6 +237,7 @@
 他にいつも使っているもの：
 
 - Audio: `paru -S alsa-utils pipewire pipewire-pulse wireplumber`
+- Bluetooth: `paru -S bluez bluez-utils`
 - IDE: `geany`
 - PDF: `zathura`
 - Discord: `vesktop`
