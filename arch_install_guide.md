@@ -34,13 +34,13 @@
   - \<new\>
   - First sector: enter
   - Size in sectors: `+2G`
-  - Hex code or GUID:ef00
+  - Hex code or GUID: `ef00`
   - Enter new partition name:arch efi
 - swapパーティション
   - \<new\>
   - First sector: enter
   - Size in sectors: `+32G`
-  - Hex code or GUID: 8200
+  - Hex code or GUID: `8200`
   - Enter new partition name:swap
 - rootパーティション
   - \<new\>
@@ -250,4 +250,5 @@
 
 - FireWall: `nftables`
   - systemdで有効化
-あとは大体Firefoxで事足りる
+
+あとは大体Firefoxで事足りる(teamsとか)
