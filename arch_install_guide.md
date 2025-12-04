@@ -236,6 +236,7 @@
 
 他にいつも使っているもの：
 
+- Audio: `paru -S alsa-utils pipewire pipewire-pulse wireplumber`
 - IDE: `geany`
 - PDF: `zathura`
 - Discord: `vesktop`
